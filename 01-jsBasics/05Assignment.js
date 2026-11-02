@@ -7,4 +7,4 @@ let user = {
     age: 19,
     gender: "male",
 }
-greetUser(user);
+greetUser(user); 

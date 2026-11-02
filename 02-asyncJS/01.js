@@ -23,8 +23,10 @@ ans = sumFromOne(5);
 
 //generally require or imports used in upperside of code
 const fs = require("fs");
-const contents = fs.readFileSync("hi.txt", "utf-8");
+const contents = fs.readFileSync("hi.txt", "utf-8"); //synchronously
 console.log(contents);
 
-const content2 = fs.readFile("user.txt", "utf-8");
-console.log(content2);
+
+//produces error
+// const content2 = fs.readFile("user.txt", "utf-8"); //asynchronously
+// console.log(content2);
