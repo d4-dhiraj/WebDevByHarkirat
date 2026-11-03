@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        .wrapper {
+            display: flex;
+        }
+
+        .left {
+            width: 50%;
+
+            h2,
+            p {
+                margin-left: 50px;
+            }
+        }
+
+        .right {
+            display: flex;
+
+            .group {
+                display: flex;
+                flex-direction: column;
+
+                p {
+                    margin-left: 8vw;
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="left">
+            <h2>Code in any language</h2>
+            <p>
+                vs code supports almost every major programming language. Several ship in the box like Javascript,
+                Typescript, c=CSS and HTML, but extensionn for others can be found in the vs code marketplace.
+            </p>
+        </div>
+        <div class="right">
+            <div class="group">
+
+                <p>JavaScript</p>
+                <p>TypeScript</p>
+                <p>Python</p>
+            </div>
+            <div class="group">
+                <p>C#</p>
+                <p>C++</p>
+                <p>HTML</p>
+            </div>
+            <div class="group">
+                <p>Java</p>
+                <p>Powershell</p>
+                <p>YAML</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
