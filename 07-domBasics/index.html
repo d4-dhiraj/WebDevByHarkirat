@@ -8,17 +8,31 @@
 </head>
 
 <body>
-    <h1>Todo List</h1>
-    <h4>Take Class</h4>
-    <h4>Go to Lab</h4>
+    <h1 class="todoHeading">Todo List</h1>
+    <h4 id="todo1">Take Class</h4>
+    <h4 id="todo2">Go to Lab</h4>
     <div>
-        <input type="text">
-        <button>Add Todo</button>
+        <input type="text" placeholder="Enter Your todo here">
+        <button id="btn" onclick="addTodo()">Add Todo</button>
     </div>
 
     <script>
-        let inpEl = document.querySelector("input");
-        console.log(inpEl);  
+        function addTodo() {
+            let inpEl = document.querySelector("input");
+            let value = inpEl.value;
+            console.log(value);
+        }
+        // const value = inpEl.value;
+
+        let todos = document.querySelectorAll("h4");
+        console.log(todos);
+        console.log(todos[1]);
+        let btn = document.getElementById("btn");
+        let todo1 = document.querySelector("#todo1"); //same as getElementById
+        console.log(todo1);
+        let todohead = document.querySelector(".todoHeading"); //getElementByClassName same as
+        console.log(todohead);
+
     </script>
 </body>
 
