@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Todo App</h1>
+    <div class="tasks">
+        <div>
+            <h3>1- Go to Gym</h3>
+            <button onclick="deleteTask(this)">Delete</button>
+        </div>
+        <div>
+            <h3>2- Study</h3>
+            <button onclick="deleteTask(this)">Delete</button>
+        </div>
+
+    </div>
+
+
+    <input type=" text">
+    <button onclick="addTask()">Add Task</button>
+
+    <script>
+
+        function addTask() {
+            let parentEl = document.querySelector(".tasks");
+            let inp = document.querySelector("input");
+            let wrapper = document.createElement("div");
+            wrapper.innerHTML = `
+            <h3>${inp.value}</h3>
+            <button onclick="deleteTask(this)">Delete</button>
+            `
+
+            parentEl.appendChild(wrapper);
+            inp.value = "";
+        }
+
+        function deleteTask(btn) {
+            let div = btn.parentElement;
+            div.remove();
+        }
+    </script>
+</body>
+
+</html>
