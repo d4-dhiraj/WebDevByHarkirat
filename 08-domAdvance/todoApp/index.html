@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: aliceblue;
+            ;
+        }
+
+        .title {
+            text-align: center;
+            margin-top: 2vh;
+            background-color: rgb(49, 81, 82);
+            font-size: 40px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            color: rgb(210, 253, 255);
+
+
+        }
+
+        input {
+            margin-top: 4vh;
+            width: 70vw;
+            height: 4vh;
+            margin-left: 5vw;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+
+        button {
+            width: 20vw;
+            font-weight: bold;
+            background-color: greenyellow;
+            height: 4vh;
+            border: 2px solid green;
+            border-radius: 20px;
+        }
+
+        .tasks {
+            display: flex;
+            gap: 5vw;
+            margin-top: 20px;
+            border: 2px solid black;
+            border-radius: 8px;
+            min-height: 70vh;
+            margin-left: 2vw;
+            margin-right: 2vw;
+            flex-wrap: wrap;
+            background-color: rgb(95, 158, 160);
+        }
+
+        .group {
+            background-color: aliceblue;
+            width: 25vw;
+            height: 20vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5vh;
+            margin: 10px 10px 10px 10px;
+            border: 1px dashed black;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="title">Todo App</h1>
+    <div class="ipbtn">
+        <input type="text" placeholder="Enter Your Todo Here">
+        <button onclick="addTodo()">Add Todo</button>
+    </div>
+    <div class="tasks">
+
+    </div>
+    <script>
+        function addTodo() {
+            let div = document.createElement("div");
+            let inp = document.querySelector("input");
+            div.setAttribute("class", "group");
+            div.innerHTML = `<h3>${inp.value}</h3>
+            <button onclick="deleteTodo(this)">Delete</button>
+            `
+            let parentEl = document.querySelector(".tasks");
+            parentEl.appendChild(div);
+        }
+        function deleteTodo(btn) {
+            let parentEl = btn.parentElement;
+            parentEl.remove();
+        }
+    </script>
+</body>
+
+</html>

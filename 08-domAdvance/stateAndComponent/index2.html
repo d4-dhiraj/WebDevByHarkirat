@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <button onclick="addTodo(id)">Add todo</button>
+    <div class="tasks">
+
+    </div>
+    <script>
+        let count = 0;
+        function counter(count) {
+            count++;
+            return count;
+        }
+        let todos = [];
+        function addTodo() {
+            todos.push({ id: counter(), title: document.querySelector("input").value })
+            render();
+        }
+
+
+        function createComponent(todo, index) {
+            let div = document.createElement("div");
+            let h3 = document.createElement("h3");
+            let btn = document.createElement("button");
+            h3.innerText = todo.title;
+            btn.innerText = "Delete Todo";
+            btn.setAttribute("onclick", "deleteTodoAt(" + index + ")");
+            div.appendChild(h3);
+            div.appendChild(btn);
+            return div;
+        }
+
+        function deleteTodoAt(index) {
+            todos.splice(index, 1);
+            render();
+        }
+        function render() {
+            let tasks = document.querySelector(".tasks");
+            tasks.innerHTML = "";
+            let n = todos.length;
+            for (let i = 0; i < n; i++) {
+                let elem = createComponent(todos[i], i);
+                tasks.appendChild(elem);
+            }
+        }
+    </script>
+</body>
+
+</html>

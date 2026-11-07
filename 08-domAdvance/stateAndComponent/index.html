@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+</head>
+
+<body>
+    <input type="text">
+    <button onclick="addTodo()">Add Todo</button>
+    <div class="tasks">
+
+    </div>
+
+
+    <script>
+        let todos = [];
+        let m = 0;
+        function addTodo() {
+            todos.push({
+                title: document.querySelector("input").value
+            })
+            render();
+        }
+
+        function deleteTodo() {
+
+            render();
+        }
+
+        function render() {
+            let tasks = document.querySelector(".tasks");
+            let n = todos.length;
+            tasks.innerHTML = "";
+
+            for (let i = 0; i < n; i++) {
+                let h3 = document.createElement("h3");
+
+                h3.innerText = todos[i].title;
+                console.log(todos)
+                tasks.appendChild(h3);
+            }
+        }
+    </script>
+</body>
+
+</html>
